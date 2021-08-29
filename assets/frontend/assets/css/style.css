@@ -1,0 +1,395 @@
+/*
+---------------------------------------------
+Table of contents
+------------------------------------------------
+1. Typography
+2. Main Nav
+3. Home
+4. About
+5. Work
+6. Single Work
+7. Pricing
+8. Contact
+--------------------------------------------- */
+
+html {font-family: 'Open Sans', sans-serif;}
+body {
+  animation: transitionIn 1s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Typography */
+p, a {font-weight: 400;}
+.h2 {font-size: 40px;}
+.h3 {font-size: 28px;}
+.light-300 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 300;
+}
+.regular-400 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 400;
+}
+.semi-bold-600 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 600;
+}
+.typo-space-line::after,
+.typo-space-line-center::after {
+  content: "";
+  width: 150px;
+  display:block;
+  position: absolute;
+  border-bottom:  5px solid #ff5200;
+  padding-top: .5em;
+}
+.typo-space-line-center::after {
+  left: 50%;
+  margin-left: -75px;
+}
+/* Main Nav */
+#main_nav{
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+.dropdown-menu {
+  border-radius: 4px!important;
+  padding: 0!important;
+}
+.dropdown-item:hover{
+  background-color: #4232c2!important;
+  color: #ffffff!important;
+}
+.dropdown-toggle::after{
+  display: none;
+}
+#main_nav .nav-item .nav-link:hover {color: #fff;}
+/* Home */
+#index_banner {
+  background-image: url('./../img/banner-bg-01.jpg');
+  background-position: center center; background-size: cover;
+  height: 100%;
+  min-height: 80vh;
+  width: 100%;
+}
+#index_banner .carousel-item {
+  min-height: 60vh;
+}
+#index_banner .carousel-control-prev i,
+#index_banner .carousel-control-next i {
+  color: #ff5200 !important;
+  text-decoration: none;
+  font-size: 4em;
+}
+#index_banner .carousel-inner {
+  height: 80vh;
+}
+#index_banner .carousel-indicators li,
+#index_banner .carousel-indicators.active {
+  background-color: #ff5200 !important;
+}
+.service-wrapper .service-footer {
+  max-width: 720px;
+}
+.service-work.card {
+  border-radius: 10px !important;
+  cursor: pointer;
+  transition: .5s;
+}
+.service-work.card:hover {
+  box-shadow: 0 25px 60px #777;
+}
+.service-work .service-work-vertical {
+	background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33.33%, rgba(255,255,255,1) 66.66%, rgba(255,255,255,0) 99.99%);
+  background-size: 300% 300%;
+  background-position: 0% 100%;
+  transition: .5s;
+}
+.service-work .service-work-vertical:hover {
+  background-position: 0% 0%;
+  transition: .5s;
+}
+.service-work .service-work-vertical:hover * {
+  color: #000;
+  border-color: #000;
+  transition: .5s;
+}
+.recent-work.card{
+  border-radius: 10px !important;
+}
+.recent-work .recent-work-vertical {
+	background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 33.333%, rgba(97,84,199,1) 66.666%, rgba(255,255,255,0) 99.999%);
+  background-size: 300% 300%;
+  background-position: 0% 100%;
+  transition: .5s;
+  cursor: pointer;
+}
+.recent-work .recent-work-vertical:hover {
+  background-position: 0% 0%;
+  transition: .5s;
+}
+.recent-work .recent-work-vertical:hover div.recent-work-content {
+  top: 50%;
+  margin-top: -2.5em;
+  position: absolute;
+}
+.recent-work .recent-work-vertical:hover * {
+  color: white;
+  transition: .5s;
+}
+.display-1{
+  position: relative;
+  z-index: 1;
+  -webkit-animation: movebounce 4.9s linear infinite;
+  animation: movebounce 4.9s linear infinite;
+  transition: 0.5s;
+}
+.more-courses{
+  position: relative;
+  top: 5%;
+  font-size: 40px;
+  text-align: center;
+}
+@keyframes movebounce {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+}
+/* About */
+#work_banner {
+  background-image: url('./../img/banner-bg-02.jpg');
+  background-position: center center; background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.progress {
+  height: 8px;
+}
+.objective-icon {
+  border-radius: 13px;
+  width: 8rem;
+}
+.partner-wap {
+  background-color: #7276ec;
+  transition: 1s;
+  cursor: pointer;
+}
+.partner-wap:hover {
+  background-color: #b1b3f5;
+}
+.why-us {
+  background: rgb(239,239,253);
+  background: -moz-linear-gradient(0deg, rgba(239,239,253,1) 50%, rgba(255,255,255,1) 50%);
+  background: -webkit-linear-gradient(0deg, rgba(239,239,253,1) 50%, rgba(255,255,255,1) 50%);
+  background: linear-gradient(0deg, rgba(239,239,253,1) 50%, rgba(255,255,255,1) 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efeffd",endColorstr="#ffffff",GradientType=1);
+}
+.team-member-img {
+  transition-duration: 0.15s;
+}
+.team-member:hover .team-member-img {
+  padding: 10px !important;
+}
+
+/* Work */
+/* Singel Work */
+#work_single_banner {
+  background-image: url('./../img/banner-bg-02.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.course-tab-wrapper {
+  background: #ffffff;
+  box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 15%);
+  -webkit-box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 15%);
+  -moz-box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 15%);
+  border-radius: 5px;
+}
+.course-tab-wrapper .nav-tabs .nav-item .nav-link {
+  font-size: 25px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.course-tab-wrapper .nav-tabs .nav-item {
+  width: 50%;
+  text-align: center;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #4232c2;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+.course-tab-wrapper .tab-content .tab-pane {
+  padding: 30px;
+}
+
+/* Pricing */
+.pricing-list {
+  margin-bottom: 1px;
+}
+.pricing-table {
+  max-width: 350px;
+  margin: auto;
+  transition: .5s;
+}
+.pricing-table:hover {
+  box-shadow: 0 25px 60px #777 !important;
+}
+.pricing-table,
+.pricing-horizontal {
+  border-radius: 15px !important;
+}
+.pricing-method p{
+  text-align: justify;
+}
+.online-payment {
+  background-image: url('./../img/online-payment.svg');
+  background-size: 70%;
+  min-height: 370px;
+  background-repeat: no-repeat;
+}
+.payment-option-class .image-block img {
+  padding-bottom: 30px;
+}
+.online-training-class img {
+  max-width: 100%;
+}
+.online-training-class h2, .online-training-class h3 {
+  font-size: 32px;
+  line-height: 42px;
+}
+.online-training-class h1, .online-training-class h2, .online-training-class h3, .online-training-class h4, .online-training-class h5 {
+  color: #ff5200;
+  margin-bottom: 46px;
+}
+.online-training-class .text-left {
+  text-align: left;
+}
+.payment-option-class .pay-block img {
+  max-height: 508px;
+  position: relative;
+  -webkit-animation: movebounce 4.9s linear infinite;
+  animation: movebounce 4.9s linear infinite;
+  transition: 0.5s;
+}
+.online-training-class img {
+  max-width: 100%;
+}
+/* Contact */
+#floatingtextarea {
+  height: 150px
+}
+/* Footer */
+.ourCourses .courses-grid {
+  position: relative;
+  padding-left: 30px;
+  text-align: -webkit-center;
+}
+.ourCourses .courses-grid a {
+  color: #428bca;
+  text-decoration: none;
+}
+.ourCourses .courses-grid .courses-grid-item {
+  float: left;
+  height: 240px;
+  position: relative;
+  width: 20%;
+}
+.ourCourses .courses-grid .courses-grid-item .course-title {
+  color: #000;
+  font-weight: 700;
+  height: 120px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #ff5200;
+  border: 1px solid #ff5200;
+  transition: all 0.4s ease-in-out;
+}
+.ourCourses .courses-grid .courses-grid-item .course-icon-top {
+  font-size: 52px;
+  font-size: 3.25rem;
+  color: #000;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  /*background-color: #fff;*/
+  transition: all 0.4s ease-in-out;
+  background: linear-gradient(to top, #ff5200 50%, #fff 50%);
+  background-size: 100% 200%;
+  background-position: top left;
+}
+.ourCourses .courses-grid .courses-grid-item .course-icon-bottom {
+  font-size: 3.25rem;
+  color: #000;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  /*background-color: #fff;*/
+  transition: all 0.4s ease-in-out;
+  background: linear-gradient(to bottom, #ff5200 50%, #fff 50%);
+  background-size: 100% 200%;
+  background-position: bottom left;
+}
+
+.vr-c {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+.course-icon-hover-top{
+  background: linear-gradient(to bottom, #fff 50%, #ff5200 50%)!important;
+  background-size: 100% 200%!important;
+  background-position: bottom left!important;
+  color: #fff!important;
+  font-size: 5rem!important;
+}
+.course-icon-hover-bottom{
+  background: linear-gradient(to top, #fff 50%, #ff5200 50%)!important;
+  background-size: 100% 200%!important;
+  background-position: top left!important;
+  color: #fff!important;
+  font-size: 5rem!important;
+}
+.bx-hover1{
+  position: relative;
+}
+.bx-hover1-style{
+  animation: movebounce 4s linear infinite;
+}
+@keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+.bx-hover2-style{
+  -webkit-animation:spin 4s ease-in-out; // No more infinite
+    -moz-animation:spin 4s linear;
+    animation:spin 4s linear;
+}
+.course-hover{
+  font-size: 17px;
+  color: #fff!important;
+}
