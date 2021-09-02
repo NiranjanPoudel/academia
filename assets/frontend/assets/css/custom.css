@@ -5,4 +5,11 @@ https://templatemo.com/tm-561-purple-buzz
 
 */
 
+.card-img,
+.card-img-top {
+    height: 250px;
+    width: 250px;
+    object-fit: covers;
+}
+
 

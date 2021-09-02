@@ -1,22 +1,16 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends MX_Controller{
-	function __construct(){
+
+	function __construct() {
 		parent::__construct();
     }
 
     function index(){
-        $data['slider'] = $this->db->get_where('slider',array('banner_id' => 1))->row();
-        // echo $this->db->last_query(); exit;
-        $data['blog'] = $this->db->get('blog_master')->result();
-        // $data['testimonial'] = $this->db->get('tbl_testimonials')->result();
-
-
-        // $data['team'] = $this->db->get_where('tbl_team',array('show_in_home'=>"Yes"))->result();
-        // $data['notice'] = $this->db->get('tbl_notice')->result();
-        // $data['service'] = $this->db->get('tbl_service')->result();
-        // $data['articles'] = $this->db->get('tbl_articles')->result();
-        // print_r($data); exit;
+        $data['sliders'] = $this->db->select('banner_img')->get('slider')->result_array();       
+        $data['courses']= $this->db->get('course')->result_array();
+        $data['site']=$this->db->select('site_logo')->get('site_setting')->result_array();
+        
         $this->load->view('index',$data);
     }
     
@@ -181,10 +175,13 @@ class Home extends MX_Controller{
 
     function pricing(){
         $data['payment'] = $this->db->get('payment')->result();
+        $data['site']=$this->db->select('site_logo')->get('site_setting')->result_array();
+
         $this->load->view('pricing',$data);
     }
     function blog(){
-      $data['blog'] = $this->db->get('blog_master')->result();
+      $data['blog'] = $this->db->get('blog_master')->result_array();
+      $data['site']=$this->db->select('site_logo')->get('site_setting')->result_array();
       $this->load->view('blog',$data);
     }
 

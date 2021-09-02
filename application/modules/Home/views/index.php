@@ -1,335 +1,69 @@
 <?php include 'header.php'; ?>
-<!-- Start Banner Hero -->
 
-<!-- <div class="banner-wrapper bg-light">
-    <div id="index_banner" class="banner-vertical-center-index pt-5">
-        <img src="./assets/img/banner-bg-01.jpg">
-    </div>
-</div> -->
-<div id="owl-demo" class="owl-carousel owl-theme">
- 
-  <div class="item"><img src="./assets/img/banner-bg-01.jpg" alt=""></div>
-  <div class="item"><img src="./assets/img/banner-bg-01.jpg" alt=""></div>
-  <div class="item"><img src="./assets/img/banner-bg-01.jpg" alt=""></div>
- 
+ <div id="owl-demo" class="owl-carousel owl-theme">
+ <?php foreach ($sliders as $key => $value): ?>
+  <div class="item <?=(0==$key) ? 'active': ''?>"> <img src="<?=base_url('uploads/slider/');?><?=$value['banner_img']?>"></div>
+  <?php endforeach ?>
 </div>
-<!-- End Banner Hero -->
+
+ 
+
+  <!-- End Banner Hero -->
+
+  <!-- Start Courses -->
+  <section class="py-5 mb-5">
+    <div class="container">
+        <div class="recent-work-header row text-center pb-5">
+            <h2 class="col-md-6 m-auto h2 semi-bold-600 py-5">Courses</h2>
+        </div>
 
 
+        <div class="row gy-5 g-lg-5 mb-4">
 
-<!-- Start Service -->
-<section class="service-wrapper py-3">
+            <!-- Start Course -->
+            <?php foreach ($courses as $key => $value): ?>
+            <div class="col-md-4 mb-3">
+                <a href="<?php  echo base_url('assets/frontend/assets');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <img class="recent-work-img card-img" src="<?php  echo base_url('uploads/course/');?><?=$value['featured_image']?>" alt="Card image">
+                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                            <h3 class="card-title light-300"><?=$value['course_title']?></h3>
+                            <p class="card-text">Duration:<?=$value['duration']?>months</p>
+                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div><!-- End Course -->
+            <?php endforeach ?>
 
-    <div class="service-tag pb-5">
-        <div class="col-md-12 h2 text-center py-5 semi-bold-600">
-            Our Courses
-        </div>    
+          
 
-        <div class="col-md-12">
-            <ul class="nav d-flex justify-content-center">
-                <li class="nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary active shadow rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".project">All</a>
-                </li>
-                <li class="nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".graphic">Graphics</a>
-                </li>
-                <li class="filter-btn nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".php">PHP</a>
-                </li>
-                <li class="nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".java">Java</a>
-                </li>
-                <li class="nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".net">.Net</a>
-                </li>
-                <li class="nav-item mx-lg-4">
-                    <a class="filter-btn nav-link btn-outline-primary rounded-pill px-4 light-300" href="<?php  echo base_url('assets/frontend/');?>#" data-filter=".android">Android</a>
-                </li>
-            </ul>
         </div>
     </div>
-
 </section>
+<!-- End Courses -->
 
-<section class="container overflow-hidden py-5">
-    <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project php">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="service card-img"  src="<?php echo base_url('assets/frontend/assets/img/services-01.jpg');?>" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">PHP Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project php">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-02.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Advanced PHP Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project graphic">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-03.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Web Design/Front End</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project php">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-04.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Laravel With Vue Js</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project php">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-05.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Laravel Framework Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project java">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-06.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Advanced Java Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project java">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-07.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Core Java</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project php">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-08.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">PHP With Laravel Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project net">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-08.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">ASP.Net Training</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project net">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-08.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">C#.Net</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-        <!-- Start Recent Work -->
-        <div class="col-xl-3 col-md-4 col-sm-6 project android">
-            <a href="<?php  echo base_url('assets/frontend/');?>course-single1.html" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                <img class="card-img" src="./assets/img/services-08.jpg" alt="Card image">
-                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                    <div class="service-work-content text-left text-light">
-                        <span class="mb-lg-3 py-5 semi-bold-600 text-primary">Android App  Development</span>
-                        <p class="card-text">Duration: 3 months</p>
-                        <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                    </div>
-                </div>
-            </a>
-        </div><!-- End Recent Work -->
-
-    </div>
-</section>
-<!-- End Service -->
-
-
-<!-- Start View Work -->
-<section class="bg-secondary">
+<!-- Start View Courses -->
+<section class="bg-secondary view-work" style="background-color: none;">
+    <img src="<?php  echo base_url('assets/frontend/');?>./assets/img/banner-bg-03.jpg">
     <div class="container py-5">
         <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-2 col-12 text-light align-items-center">
                 <i class='display-1 bx bx-laptop bx-lg'></i>
             </div>
             <div class="col-lg-7 col-12 text-light pt-2">
-                <h3 class="h4 more-courses semi-bold-600">See More Courses</h3>
+                <h3 class="h4 more-courses semi-bold-600">Our Courses</h3>
             </div>
             <div class="col-lg-3 col-12 pt-4">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="btn btn-primary rounded-pill btn-block shadow px-4 py-2">More Courses</a>
+                <a href="<?php  echo base_url('assets/frontend/assets');?>#" class="btn btn-primary rounded-pill btn-block shadow px-4 py-2">More Courses</a>
             </div>
         </div>
     </div>
 </section>
-<!-- End View Work -->
-
-<!-- Start Recent Work -->
-<section class="py-5 mb-5">
-    <div class="container">
-        <div class="recent-work-header row text-center pb-5">
-            <h2 class="col-md-6 m-auto h2 semi-bold-600 py-5">Courses</h2>
-        </div>
-        <div class="row gy-5 g-lg-5 mb-4">
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/recent-work-01.jpg" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">Web Design / Front End</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/php.jpg" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">PHP</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/net.png" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">.NET</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/android.png" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">Android</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/python.png" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">Python</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-md-4 mb-3">
-                <a href="<?php  echo base_url('assets/frontend/');?>#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" src="./assets/img/java.jpeg" alt="Card image">
-                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title light-300">Java</h3>
-                            <p class="card-text">Duration: 3 months</p>
-                            <span class="btn btn-primary btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Enrole Now</span>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-        </div>
-    </div>
-</section>
-<!-- End Recent Work -->
+<!-- End View Courses -->
 
 <!-- Start Grid -->
-<section class="py-5 mb-5">
+<section class="py-5 my-5">
     <div class="ourCourses">
         <div class="container">
             <div class="row gy-5 g-lg-5 mb-4">
@@ -343,7 +77,7 @@
                             <h2>PROFESSIONAL IT COURSES</h2> 
                             <p>We provides more than 70+ Career oriented professional IT courses.</p> 
                             <div class="center-viewAll"> 
-                                <a href="<?php  echo base_url('assets/frontend/');?>#" class="hvr-icon-wobble-horizontal"> MORE COURSES </a> 
+                                <a href="<?php  echo base_url('assets/frontend/assets');?>#" class="hvr-icon-wobble-horizontal"> MORE COURSES </a> 
                             </div> 
                         </div> 
                     </div> 
@@ -353,7 +87,7 @@
 
                     <div class="courses-grid"> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c">
                                         <i class='bx bxl-react bx-hover2'></i> 
@@ -365,7 +99,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-title"> 
                                     <div class="vr-c"> Web Design Training </div> 
                                 </div>
@@ -377,7 +111,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c">
                                         <i class="fab fa-php bx-hover1"></i>
@@ -389,7 +123,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#">
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#">
                                 <div class="course-title"> 
                                     <div class="vr-c"> Python &amp; Django Training </div> 
                                 </div>
@@ -401,7 +135,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c">
                                         <i class='bx bx-line-chart bx-hover1' ></i>
@@ -413,7 +147,7 @@
                             </a> 
                         </div>  
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class="fas fa-ethernet bx-hover1"></i>
@@ -425,7 +159,7 @@
                             </a> 
                         </div>
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-title"> 
                                     <div class="vr-c"> Java Training Package </div> 
                                 </div>
@@ -437,7 +171,7 @@
                             </a> 
                         </div>
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class='bx bxs-check-square bx-hover1'></i> 
@@ -449,7 +183,7 @@
                             </a> 
                         </div>
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#">  
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#">  
                                 <div class="course-title"> 
                                     <div class="vr-c"> Android App Development Training </div> 
                                 </div>
@@ -461,7 +195,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class="fas fa-palette bx-hover2"></i> 
@@ -473,7 +207,7 @@
                             </a> 
                         </div>
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#">  
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#">  
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class='bx bxl-react bx-hover2'></i> 
@@ -485,7 +219,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-title"> 
                                     <div class="vr-c"> Oracle Training </div> 
                                 </div>
@@ -497,7 +231,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class='bx bxs-bar-chart-alt-2 bx-hover1'></i>
@@ -509,7 +243,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#">  
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#">  
                                 <div class="course-title"> 
                                     <div class="vr-c"> Data Science with Python </div> 
                                 </div>
@@ -521,7 +255,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class="fab fa-php bx-hover1"></i>
@@ -533,7 +267,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class='bx bxl-python bx-hover2' ></i> 
@@ -545,7 +279,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-title"> 
                                     <div class="vr-c"> Advanced Excel </div> 
                                 </div>
@@ -557,7 +291,7 @@
                             </a> 
                         </div>  
                         <div class="courses-grid-item item1"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-icon-top icon1"> 
                                     <div class="vr-c"> 
                                         <i class="fab fa-java bx-hover1"></i>
@@ -569,7 +303,7 @@
                             </a> 
                         </div> 
                         <div class="courses-grid-item item2"> 
-                            <a href="<?php  echo base_url('assets/frontend/');?>#"> 
+                            <a href="<?php  echo base_url('assets/frontend/assets');?>#"> 
                                 <div class="course-title"> 
                                     <div class="vr-c"> Laravel Training </div> 
                                 </div>
@@ -588,4 +322,62 @@
         </div>
     </section>
     <!-- End Grid -->
-    <?php include 'footer.php'; ?>
+
+    <!-- Start Blog Banner -->
+    <section class="bg-secondary view-work" style="background-color: none;">
+        <img src="<?php  echo base_url('assets/frontend/');?>./assets/img/banner-bg-03.jpg">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-2 col-12 text-light align-items-center">
+                    <!-- <i class='display-1 bx bx-laptop bx-lg'></i> -->
+                    <i class='display-1 bx bx-edit bx-lg'></i>
+                </div>
+                <div class="col-lg-7 col-12 text-light pt-2">
+                    <h3 class="h4 more-courses semi-bold-600">Blogs</h3>
+                </div>
+                <div class="col-lg-3 col-12 pt-4">
+                    <a href="<?php  echo base_url('assets/frontend/assets');?>#" class="btn btn-primary rounded-pill btn-block shadow px-4 py-2">More Blogs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Banner -->
+
+    <!-- Start Blog -->
+    <section class="container py-5 my-5">
+
+        <div class="row projects gx-lg-5">
+            <a href="<?php  echo base_url('assets/frontend/assets');?>#x" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">
+                <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
+                    <img class="card-img-top" src="<?php  echo base_url('assets/frontend/');?>./assets/img/php.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title light-300 text-primary">Digital Marketing</h5>
+                        <p class="card-text light-300 text-dark">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolor.
+                        </p>
+                        <span class="text-decoration-none text-primary light-300">
+                          Read more <i class='bx bxs-hand-right ms-1'></i>
+                      </span>
+                  </div>
+              </div>
+          </a>
+          <a href="<?php  echo base_url('assets/frontend/assets');?>work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project graphic social">
+            <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
+                <img class="card-img-top" src="<?php  echo base_url('assets/frontend/');?>./assets/img/java.jpeg" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title light-300 text-primary">Why selecting a Software Development as career?</h5>
+                    <p class="card-text light-300 text-dark">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <span class="text-decoration-none text-primary light-300">
+                      Read more <i class='bx bxs-hand-right ms-1'></i>
+                  </span>
+              </div>
+          </div>
+      </a>
+  </div>
+</section>
+<?php include 'footer.php'; ?>
+<!-- End Blog -->

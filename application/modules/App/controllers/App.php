@@ -177,8 +177,8 @@ class App extends OAS_Controller{
             $crud->set_field_upload('featured_image','uploads/course');
             $crud->set_field_upload('syllabus_pdf','uploads/file');
             
-            $crud->columns(['course_tittle', 'course_description','syllabus_description']);
-            $crud->required_fields(['title', 'category_id', 'syllabus_description','syllabus_pdf', 'featured_image','is_deleted_flag']);
+            $crud->columns(['course_title', 'course_description','syllabus_description']);
+            $crud->required_fields(['title', 'category_id', 'syllabus_description','duration', 'featured_image','is_deleted_flag']);
             
             $crud->set_relation('category_id', 'course_category', 'course_name');
             

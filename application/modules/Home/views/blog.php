@@ -7,22 +7,24 @@
         </div>
 
         <div class="row projects gx-lg-5">
-            <a href="#x" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">
+        <?php foreach ($blog as $key => $value): ?>
+            <a href="#" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">
                 <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
-                    <img class="card-img-top" src="./assets/img/php.jpg" alt="...">
+                    <img class="card-img-top" src="<?php  echo base_url('uploads/blog/');?><?=$value['featured_image']?>">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-primary">Digital Marketing</h5>
+                        <h5 class="card-title light-300 text-primary"><?=$value['title']?></h5>
                         <p class="card-text light-300 text-dark">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolor.
+                        <?=$value['description']?>
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                           Read more <i class='bx bxs-hand-right ms-1'></i>
                       </span>
                   </div>
-              </div>
+                  
+              </div><?php endforeach ?>
           </a>
-          <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project graphic social">
+        </div>
+          <!-- <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project graphic social">
             <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
                 <img class="card-img-top" src="./assets/img/java.jpeg" alt="...">
                 <div class="card-body">
@@ -37,7 +39,7 @@
               </div>
           </div>
       </a>
-  </div>
+  </div> -->
   <div class="row">
     <div class="btn-toolbar justify-content-center pb-4" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
@@ -55,4 +57,4 @@
     </div>
 </div>
 </section>
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
